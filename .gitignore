@@ -12,3 +12,6 @@ __pycache__/
 .chroma_cache/
 chroma_db/
 chroma_db_week3/
+# Local DevSecOps files
+.venv-security/
+reports/

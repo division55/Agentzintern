@@ -1,0 +1,26 @@
+﻿services:
+  agent:
+    build: .
+    container_name: agentzintern-agent
+    env_file:
+      - .env
+    environment:
+      OLLAMA_HOST: http://host.docker.internal:11434
+    volumes:
+      - chroma_data:/app/chroma_db_week3
+    restart: unless-stopped
+
+  ingest:
+    build: .
+    profiles:
+      - ingest
+    env_file:
+      - .env
+    environment:
+      OLLAMA_HOST: http://host.docker.internal:11434
+    volumes:
+      - chroma_data:/app/chroma_db_week3
+    command: ["python", "ingest.py"]
+
+volumes:
+  chroma_data:

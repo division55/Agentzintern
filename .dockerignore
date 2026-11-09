@@ -1,0 +1,9 @@
+﻿.git
+.venv
+.venv-security
+__pycache__
+*.pyc
+.env
+reports
+chroma_db
+chroma_db_week3
